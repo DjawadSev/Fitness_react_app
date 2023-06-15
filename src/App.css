@@ -1,6 +1,14 @@
+:root {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(219, 13, 13);
+  --text-color: rgb(255, 255, 255);
+}
+
+
 body {
     font-family: 'Josefin Sans';
     background-color: #FFFAFB;
+    color: var(--primary-color);
   }
   
   * {
@@ -142,3 +150,9 @@ body {
       width: 280px;
     }
   }
+
+.navbar__container {
+  position: relative;
+  z-index: 1;
+
+}
