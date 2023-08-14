@@ -15,7 +15,7 @@ const Home = () => {
 
 
   return (
-    <Box>
+    <Box className="Home__container">
       <HeroBanner />
       <SearchExercises 
         setExercises={setExercises}
