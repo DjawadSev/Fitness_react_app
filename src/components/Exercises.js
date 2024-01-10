@@ -10,10 +10,18 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setcurrentPage] = useState(1);
   const exercisesPerPage = 9;
 
-  console.log(exercises);
-  const indexOfLastExercise = currentPage * exercisesPerPage;
-  const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
+  let currentExercises = [];
+  if(Array.isArray(exercises)) {
+
+    const indexOfLastExercise = currentPage * exercisesPerPage;
+    const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
+    currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
+  
+  } else {
+    console.error('exercies prop did not recieve an array');
+  }
+
+  
 
   const paginate = (e, value) => {
     setcurrentPage(value);
