@@ -65,7 +65,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
             <TextField 
                 sx={{
                     input: { fontWeight: '700',
-                    border: 'none', borderRadius: '4px'
+                    border: 'none', borderRadius: '5px'
                 },
                 width: { lg: '800px', xs: '350px'}
                 ,
@@ -87,7 +87,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
                     fontSize: { lg: '20px', xs: '14px' },
                     height: '56px',
                     position: "absolute",
-                    right: '0'
+                    right: '0',
+                    borderRadius: '24px'
 
                 }}
                 onClick={handleSearch}

@@ -25,13 +25,13 @@ const Detail = ({ exerciseDetail }) => {
   ]
   
   return (
-    <Stack gap="60px" sx={{flexDirection: { lg: 'row'}, p: '20px', alignItems: 'center'}}>
+    <Stack gap="60px" sx={{display: "-webkit-inline-flex", justifyContent: "center", alignContent:"center", flexDirection: { lg: 'row'}, p: '20px', alignItems: 'center', marginTop: '7rem'}}>
         <img src={gifUrl} alt={name} loading="lazy" className="detail__image" />
-        <Stack className='exercise-detail__stack' sx={{ gap: {lg: '35px', xs: '20px' }}}>
+        <Stack className='exercise-detail__stack' sx={{display:"flex", justifyContent:"center", alignItems: 'center', gap: {lg: '20px', xs: '20px' }, }}>
             <Typography variant="h3" className='exercise-name__typohraphy'>
                 {name}
             </Typography>
-            <Typography variant="h6" className='exercise-detail_description'>
+            <Typography variant="h6" className='exercise-detail_description' sx={{}}>
               Exercises Keep you strong. {name} {` `}
               is one of the best exercises to target your {target}.
               It will help you improve your mood and gain energy.
