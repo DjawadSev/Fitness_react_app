@@ -32,14 +32,10 @@ const ExerciseDetail = () => {
 
       const equipmentExercisesData = await fetchData(`${exerciseDbUrl}/exercises/equipment/${exerciseDetailData.equipment}`, exerciseOptions);
       setEquipmentExercises(equipmentExercisesData);
+    };
 
-    }
-    
-  
     fetchExercisesData();
   }, [id]);
-  
-
 
   return (
     <Box className="exercise-detail__container">
@@ -47,7 +43,7 @@ const ExerciseDetail = () => {
       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
     </Box>
-  )
-}
+  );
+};
 
-export default ExerciseDetail
+export default ExerciseDetail;
