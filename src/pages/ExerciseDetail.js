@@ -10,7 +10,7 @@ import SimilarExercises from '../components/SimilarExercises';
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setexerciseDetail] = useState({});
-  const [exerciseVideos, setexerciseVideos] = useState([]);
+  const [exerciseVideos, setexerciseVideos] = useState(null);
   const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
   const [equipmentExercises, setEquipmentExercises] = useState([]);
   const { id } = useParams();
@@ -24,7 +24,8 @@ const ExerciseDetail = () => {
       setexerciseDetail(exerciseDetailData);
 
       const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=${exerciseDetailData.name}`, youtubeOptions);
-      setexerciseVideos(exerciseVideosData?.contents ?? []);
+      const videoResults = Array.isArray(exerciseVideosData?.contents) ? exerciseVideosData.contents : [];
+      setexerciseVideos(videoResults);
 
       const targetMuscleExercisesData = await fetchData(`${exerciseDbUrl}/exercises/target/${exerciseDetailData.target}`, exerciseOptions);
       setTargetMuscleExercises(targetMuscleExercisesData);
